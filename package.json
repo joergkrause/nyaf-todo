@@ -1,20 +1,31 @@
 {
-  "name": "react-todo-2019",
-  "version": "0.1.0",
+  "name": "nyaf-todo",
+  "version": "0.1.1",
   "private": true,
   "dependencies": {
-    "react": "^16.10.0",
-    "react-dom": "^16.10.0",
-    "react-scripts": "3.1.2"
+    "@nyaf/lib": "^0.6.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-proposal-decorators": "^7.10.5",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
+    "@rollup/plugin-babel": "^5.2.1",
+    "@rollup/plugin-commonjs": "^15.1.0",
+    "@rollup/plugin-image": "^2.0.5",
+    "@rollup/plugin-node-resolve": "^9.0.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "http-server": "^0.12.3",
+    "rollup": "^2.28.1",
+    "rollup-plugin-postcss": "^3.1.8",
+    "terser": "^5.3.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+    "start": "http-server ./public -p 8080 -o",
+    "build": "rollup -c && npx terser --compress --mangle -- public/index.js > public/index.min.js",
+    "test": "echo \"No tests\""
   },
   "browserslist": {
     "production": [
@@ -26,6 +37,35 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "esmodules": true
+          }
+        }
+      ],
+      [
+        "@babel/preset-react",
+        {
+          "runtime": "classic",
+          "pragma": "JSX.createElement",
+          "pragmaFrag": "null"
+        }
+      ]
+    ],
+    "plugins": [
+      [
+        "@babel/plugin-proposal-decorators",
+        {
+          "legacy": true
+        }
+      ],
+      "@babel/plugin-proposal-class-properties"
     ]
   }
 }

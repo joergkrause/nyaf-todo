@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "target": "es6",
+    "module": "commonjs",
+    "experimentalDecorators": true
+  },
+  "include": ["src/**/*"]
+}

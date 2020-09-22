@@ -1,18 +1,24 @@
 .Logo {
-  width: 50px;
+  width: 80px;
   position: relative;
   top: 50px;
 }
 
 .ToDo {
   text-align: center;
-  border: 1px solid white;
   width: 80vw;
+  max-width: 768px;
   height: auto;
-  box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.3);
-  background: #fdfdfd;
-  padding-bottom: 60px;
   margin: 40px auto;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.ToDoInput {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .ToDo-Header {
@@ -32,22 +38,32 @@
 }
 
 .ToDo-Add {
-  margin: 20px auto 0;
-  display: block;
-  padding: 4px 12px;
   cursor: pointer;
-  background: #73ff73;
+  width: 50px;
+  height: 50px;
+  border-color: transparent;
+  color: #73ff73;
+  font-size: 2rem;
   border-radius: 10px;
-  box-shadow: 1px 1px 1px #47a947;
-  color: white;
-  font-size: 28px;
+  background: linear-gradient(145deg, #e6e6e6, #ffffff);
+  box-shadow: 5px 5px 15px #cccccc, -5px -5px 15px #ffffff;
 }
 
 .ToDo-Add:hover {
-  box-shadow: none;
+  box-shadow: 5px 5px 10px #cccccc, -5px -5px 10px #ffffff;
 }
 
 .ToDo-Container {
   width: 80%;
   margin: 0 auto;
+}
+
+.ToDo-ErrorContainer {
+  height: 100px;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: red;
+  font-size: 1rem;
 }
