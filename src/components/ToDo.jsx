@@ -1,5 +1,5 @@
 import JSX, { CustomElement, Properties, BaseComponent } from "@nyaf/lib";
-// import * as Logo from "../assets/logo.png";
+import * as Logo from "../assets/logo.png";
 import "./ToDo.css";
 
 console.log(Logo);
@@ -40,7 +40,7 @@ class ToDo extends BaseComponent {
 
   handleKeyPress(e) {
     if (e.key === "Enter") {
-      createNewToDoItem();
+      this.createNewToDoItem();
     }
   }
 
@@ -52,11 +52,11 @@ class ToDo extends BaseComponent {
     const id = e.detail;
     this.data.list = this.data.list.filter((item) => item.id !== id);
   }
-// <img className="Logo" src={Logo.default} alt="@nyaf logo" />
+
   async render() {
     return (
       <div className="ToDo">
-
+        <img className="Logo" src={Logo.default} alt="@nyaf logo" />
         <h1 className="ToDo-Header">@nyaf To Do</h1>
         <div className="ToDo-Container">
           <div className="ToDo-Content">
@@ -66,8 +66,8 @@ class ToDo extends BaseComponent {
           </div>
 
           <div className="ToDoInput">
-            <input type="text" value={this.toDo} n-on-input={(e) => this.handleInput(e)} n-on-keypress={(e) => this.handleKeyPress(e)} />
-            <button className="ToDo-Add" n-on-click={this.createNewToDoItem}>
+            <input type="text" placeholder="Enter a todo..." value={this.toDo} n-on-input={(e) => this.handleInput(e)} n-on-keypress={(e) => this.handleKeyPress(e)} />
+            <button className="ToDo-Add" n-on-click={(e) => this.createNewToDoItem()}>
               +
           </button>
           </div>

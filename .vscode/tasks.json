@@ -1,0 +1,16 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+    {
+      "type": "npm",
+      "script": "run build",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [],
+      "label": "npm: build",
+      "detail": "rollup -c && npx terser --compress --mangle -- public/index.js > public/index.min.js"
+    }
+  ]
+}
