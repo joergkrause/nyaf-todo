@@ -23,7 +23,7 @@
     "terser": "^5.3.2"
   },
   "scripts": {
-    "start": "http-server ./public -p 8080 -o",
+    "start": "http-server ./public -p 3000 -o",
     "build": "rollup -c && npx terser --compress --mangle -- public/index.js > public/index.min.js",
     "test": "echo \"No tests\""
   },
