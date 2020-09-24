@@ -2,10 +2,8 @@ import JSX, { CustomElement, Properties, BaseComponent } from "@nyaf/lib";
 import * as Logo from "../assets/logo.png";
 import "./ToDo.css";
 
-console.log(Logo);
-
 @CustomElement('app-todo')
-@Properties({ list: []  })
+@Properties({ list: [] })
 class ToDo extends BaseComponent {
 
   toDo;

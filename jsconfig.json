@@ -5,5 +5,5 @@
     "module": "commonjs",
     "experimentalDecorators": true
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*", "../nyaf-todo-flux/src/businesslogic"]
 }
