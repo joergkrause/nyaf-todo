@@ -35,3 +35,4 @@ To get the sources, visit [Github](https://github-com/joergkrause/nyaf).
 
 ## What's the Purpose
 
+It's a demo app to show the core ingredients of a **@nyaf** driven web component based app.
