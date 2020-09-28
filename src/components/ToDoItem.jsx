@@ -1,4 +1,4 @@
-import JSX, { BaseComponent, Properties, CustomElement, Events } from "@nyaf/lib";
+import { BaseComponent, Properties, CustomElement, Events } from "@nyaf/lib";
 
 import "./ToDoItem.css";
 
@@ -13,9 +13,9 @@ class ToDoItem extends BaseComponent {
 
   async render() {
     return (
-      <div className="ToDoItem">
-        <p className="ToDoItem-Text">{this.data.item.text}</p>
-        <button className="ToDoItem-Delete" n-on-click={() => this.deleteItem()}>
+      <div class="ToDoItem">
+        <p class="ToDoItem-Text">{this.data.item.text}</p>
+        <button class="ToDoItem-Delete" n-on-click={() => this.deleteItem()}>
           -
         </button>
       </div>

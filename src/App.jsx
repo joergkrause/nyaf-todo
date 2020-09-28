@@ -1,4 +1,4 @@
-import JSX, { BaseComponent, CustomElement } from "@nyaf/lib";
+import { BaseComponent, CustomElement } from "@nyaf/lib";
 import "./App.css";
 
 @CustomElement('app-main')

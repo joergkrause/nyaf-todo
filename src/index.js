@@ -1,7 +1,9 @@
-import { GlobalProvider } from "@nyaf/lib";
+import JSX, { GlobalProvider } from "@nyaf/lib";
 import App from "./App";
 import ToDo from "./components/ToDo";
 import ToDoItem from "./components/ToDoItem";
+
+window.JSX = JSX;
 
 GlobalProvider.bootstrap({
   components: [
