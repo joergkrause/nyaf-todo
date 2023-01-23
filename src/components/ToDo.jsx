@@ -1,4 +1,4 @@
-import { CustomElement, Properties, BaseComponent } from "@nyaf/lib";
+import { CustomElement, Properties, BaseComponent, LifeCycle } from "@nyaf/lib";
 import * as Logo from "../assets/logo.png";
 import "./ToDo.css";
 
@@ -9,12 +9,7 @@ class ToDo extends BaseComponent {
   toDo;
 
   constructor() {
-    super();
-    this.data.list = [
-      { id: 1, text: "clean the house" },
-      { id: 2, text: "buy milk" }
-    ];
-    this.toDo = '';
+    super();    
   }
 
   generateId() {
@@ -52,7 +47,15 @@ class ToDo extends BaseComponent {
   }
 
   async render() {
-    return (
+    if (!this.data.list.length) {
+        this.setData('list', [
+        { id: 1, text: "clean the house" },
+        { id: 2, text: "get some flowers" }
+      ]);
+      this.toDo = '';
+      return;
+    }
+    return await (
       <div class="ToDo">
         <img class="Logo" src={Logo.default} alt="@nyaf logo" />
         <h1 class="ToDo-Header">@nyaf To Do</h1>
@@ -65,9 +68,9 @@ class ToDo extends BaseComponent {
 
           <div class="ToDoInput">
             <input type="text" placeholder="Enter a todo..." value={this.toDo} n-on-input={(e) => this.handleInput(e)} n-on-keypress={(e) => this.handleKeyPress(e)} />
-            <button className="ToDo-Add" n-on-click={(e) => this.createNewToDoItem()}>
+            <button class="ToDo-Add" n-on-click={(e) => this.createNewToDoItem()}>
               +
-          </button>
+            </button>
           </div>
         </div>
       </div>

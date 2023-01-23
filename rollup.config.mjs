@@ -13,6 +13,7 @@ export default {
     file: 'public/index.js',
     format: 'iife',
     name: 'bundle',
+    format: 'cjs'
   },
   plugins: [
     postcss({

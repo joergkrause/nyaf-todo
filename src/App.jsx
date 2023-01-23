@@ -3,12 +3,16 @@ import "./App.css";
 
 @CustomElement('app-main')
 export default class App extends BaseComponent {
+
+  data;
+
   constructor() {
     super();
   }
 
   async render() {
-    return <app-todo></app-todo>;
+    console.log('Render called app-main');
+    return await <app-todo></app-todo>;
   }
 
 }
